@@ -17,6 +17,7 @@
 
             </tr>
             <?php
+                include "functions.php";
                 include "connectDB.php";
                 $connection = OpenCon ();
                 $sql = "SELECT `dispatch_queue`.`id`, `dispatch_queue`.`description`, `dispatch_data`.`PG`, `dispatch_data`.`NOME`, `dispatch_data`.`FUNCAO` 
@@ -28,7 +29,7 @@
                 
                 if($return ->num_rows > 0){
                     while ($row = $return ->fetch_assoc()){
-                        echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>".$row["PG"]."</td><td>".$row["NOME"]."</td><td>".$row["FUNCAO"]."</td></tr>";
+                        echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>". PG($row["PG"])."</td><td>".$row["NOME"]."</td><td>".FUNCAO($row["FUNCAO"])."</td></tr>";
                     }
                     echo "</table>";
                 }
@@ -39,8 +40,20 @@
             ?>
         </tbody>
     </table>
-        <!--IMPORTAR TABELA DO BANCO DE DADOS RELACIONAL INNER JOIN-->
-        <button type="submit" value="refresh">Atualizar Fila</button>
+        <button type="submit" value="refresh" onclick="window.location.reload(true);">Atualizar Fila</button>   
+        
+        <div>
+                STATUS DA FILA
+                <?php
+                    $sql = "SELECT id, codAcess
+                            FROM dispatch_queue
+                            ORDER BY ASC
+                            LIMIT 1;"
+                    
+                ?>
+
+        </div>
+
         <button type="submit" value="nextNode">Chamar próximo</button>
         <button type="submit" value="onHold">Em espera</button>
         <button type="submit" value="theEnd">Encerrar acessos</button>
