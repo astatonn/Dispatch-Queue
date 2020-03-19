@@ -266,6 +266,25 @@ function FUNCAO ($funcao){
     }
 }
 
-
+function status ($status){
+    switch ($status){
+        case 0:
+            $statusReturn = " ";
+            return $statusReturn;
+        break;
+        case 1:
+            $statusReturn = "Aguardando presença";
+            return $statusReturn;
+        break;
+        case 2:
+            $statusReturn = "Atendendo";
+            return $statusReturn;
+        break;
+        case 3:
+            $statusReturn = "Finalizado";
+            return $statusReturn;
+        break;
+    }
+}
 
 ?>

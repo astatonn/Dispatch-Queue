@@ -10,7 +10,6 @@
         </script>
     </head>
     <body>
-        <meta http-equiv="refresh" content="5; URL=http://www.yourdomain.com/yoursite.html">
     <table>
         <tbody>
             <tr>
