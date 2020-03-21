@@ -45,8 +45,12 @@
                             LIMIT 1";
                     $RETURN = $connection->query ($SQL);
                     $ROW = $RETURN ->fetch_assoc();
+                    if ($ROW["status"]==0){
+                        echo "Status: em espera";
+                    }
+                    else {
                     echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);
-                
+                    }
                 ?>
     </body>
 </html>

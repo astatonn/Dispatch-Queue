@@ -58,10 +58,11 @@
                                 '</td><td><div class="btn-off">Chamar</div></td>
                                 <td><div class="btn-off">Atendendo</div></td>
                                 <td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=3" class="btn">Finalizar</a></td></tr>';
+                            break;
                             case 3:
                                 $sql = "DELETE FROM `dispatch_queue` WHERE `dispatch_queue`.`codAcess` =".$row["codAcess"];
                                 $connection ->query($sql);
-
+                            break;
 
 
 
@@ -87,7 +88,10 @@
                             LIMIT 1";
                     $RETURN = $connection->query ($SQL);
                     $ROW = $RETURN ->fetch_assoc();
-                    echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);
+                    if ($ROW["status"]==0){
+                        echo "em espera";
+                    }
+                    else {echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);}
                 
                 ?>
 
