@@ -7,6 +7,15 @@
         
     </head>
     <body>
+    <?php 
+    session_start();
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['codAcess']) == true))
+    {
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header('location:dispatch.html');
+    }
+  ?>
     <table>
         <tbody>
             <tr>
@@ -33,7 +42,7 @@
                     while ($row = $return ->fetch_assoc()){
                         switch ($row["status"]){
                             case 0:
-                                echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>". PG($row["PG"])."</td><td>".$row["NOME"]."</td><td>".FUNCAO($row["FUNCAO"])."</td><td>".$row["status"].
+                                echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>". PG($row["PG"])."</td><td>".$row["NOME"]."</td><td>".FUNCAO($row["FUNCAO"])."</td><td>".status($row["status"]).
                                 '</td><td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=1" class="btn">Chamar</a></td>
                                 <td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=2" class="btn">Atendendo</a></td>
                                 <td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=3" class="btn">Finalizar</a></td></tr>';
@@ -45,7 +54,7 @@
                                 <td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=3" class="btn">Finalizar</a></td></tr>';
                             break;
                             case 2:
-                                echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>". PG($row["PG"])."</td><td>".$row["NOME"]."</td><td>".FUNCAO($row["FUNCAO"])."</td><td>".$row["status"].
+                                echo "<tr><td>" .$row["id"]."</td><td>".$row["description"]."</td><td>". PG($row["PG"])."</td><td>".$row["NOME"]."</td><td>".FUNCAO($row["FUNCAO"])."</td><td>".status($row["status"]).
                                 '</td><td><div class="btn-off">Chamar</div></td>
                                 <td><div class="btn-off">Atendendo</div></td>
                                 <td><a href="action.php?idAtendimento='.$row["codAcess"].'&idStatus=3" class="btn">Finalizar</a></td></tr>';
@@ -63,7 +72,6 @@
                 else {
                     echo "SEM FILA!";
                 }
-                CloseCon($connection);
             ?>
         </tbody>
     </table>
@@ -85,9 +93,7 @@
 
         </div>
 
-        <button type="submit" value="nextNode">Chamar próximo</button>
-        <button type="submit" value="onHold">Em espera</button>
-        <button type="submit" value="theEnd">Encerrar acessos</button>
+       <?php echo '<a href="action.php?idAtendimento=resetqueue" class="btn">Encerrar Acessos</a>' ?>  
         
 
     </body>

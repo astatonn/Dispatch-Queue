@@ -14,8 +14,6 @@
         if ($tamCodAcess == 16)
         {    
             if (OpenCon()){
-                // PRIMEIRO VERIFICAR SE O CÓDIGO DE ACESSO EXISTE
-                // $query = mysql_query("SELECT * FROM dispatch_data") or die (mysql_error());
 
                 $query = "SELECT codAcess 
                 FROM dispatch_data

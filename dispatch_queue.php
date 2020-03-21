@@ -17,6 +17,7 @@
                 <th>CÓDIGO DE ACESSO</th>
             </tr>
             <?php
+                include "functions.php";
                 include "connectDB.php";
                 $connection = OpenCon ();
                 $sql = "SELECT id, codAcess FROM dispatch_queue ORDER BY id ASC";
@@ -36,5 +37,16 @@
         </tbody>
     </table>
     <a href="/dispatch.html">Criar novo ticket </a>
+                <?php
+                    $connection = OpenCon();
+                    $SQL = "SELECT id, codAcess,status
+                            FROM dispatch_queue
+                            ORDER BY id ASC
+                            LIMIT 1";
+                    $RETURN = $connection->query ($SQL);
+                    $ROW = $RETURN ->fetch_assoc();
+                    echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);
+                
+                ?>
     </body>
 </html>
