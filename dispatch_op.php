@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Fila Despacho</title>
-        <style>tr, th, td{border: 2px solid black;}</style>
         
     </head>
     <body>
@@ -16,6 +15,9 @@
         header('location:dispatch.html');
     }
   ?>
+    <table>
+        <tr>
+            <th>
     <table>
         <tbody>
             <tr>
@@ -77,28 +79,8 @@
         </tbody>
     </table>
         <button type="submit" value="refresh" onclick="window.location.reload(true);">Atualizar Fila</button>   
-        
-        <div>
-                STATUS DA FILA
-                <?php
-                    $connection = OpenCon();
-                    $SQL = "SELECT id, codAcess,status
-                            FROM dispatch_queue
-                            ORDER BY id ASC
-                            LIMIT 1";
-                    $RETURN = $connection->query ($SQL);
-                    $ROW = $RETURN ->fetch_assoc();
-                    if ($ROW["status"]==0){
-                        echo "em espera";
-                    }
-                    else {echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);}
-                
-                ?>
-
-        </div>
-
        <?php echo '<a href="action.php?idAtendimento=resetqueue" class="btn">Encerrar Acessos</a>' ?>  
-        
+            
 
     </body>
 </html>

@@ -2,20 +2,26 @@
     <head>
         <meta charset="utf-8">
         <title>Fila Despacho</title>
-        <style>tr, th, td{border: 2px solid black;}</style>
         <script>
-            setTimeout(function(){
+           /* setTimeout(function(){
             window.location.reload(1);
-            }, 5000);
+            }, 5000);*/
         </script>
+        <link rel="stylesheet" type ="text/css" href="mystyle.css">
     </head>
     <body>
+    
+        <nav>ACOMPANHAMENTO DA FILA</nav>
+    <div class="grid-container">
+    <div class="queue">
     <table>
         <tbody>
+            <thead>
             <tr>
                 <th>ID</th>
                 <th>CÓDIGO DE ACESSO</th>
             </tr>
+            </thead>
             <?php
                 include "functions.php";
                 include "connectDB.php";
@@ -36,21 +42,39 @@
             ?>
         </tbody>
     </table>
-    <a href="/dispatch.html">Criar novo ticket </a>
+            </div>
+            
+
+            <div class="NewTicket">
+                <a href="/dispatch.html">Criar novo ticket </a>
+            </div>
+            <div class="QueueStatus">
                 <?php
                     $connection = OpenCon();
                     $SQL = "SELECT id, codAcess,status
                             FROM dispatch_queue
                             ORDER BY id ASC
-                            LIMIT 1";
+                            ";
                     $RETURN = $connection->query ($SQL);
-                    $ROW = $RETURN ->fetch_assoc();
-                    if ($ROW["status"]==0){
-                        echo "Status: em espera";
+                    $c = 0;
+                    while ($ROW = $RETURN ->fetch_assoc()){
+                    
+                        if ($ROW["status"]==1 || $ROW["status"]==2){
+                            echo "Senha: ".$ROW["id"]."<br><br><p>Código de acesso: ".$ROW["codAcess"]."<br><br><p>Status: ".status($ROW ["status"]);
+                        $c = 1;
+                        break;
+                        }
+                        else {
+                            if ($ROW["status"] == 0){
+                                $c =0;
+                            }
+                        }
                     }
-                    else {
-                    echo "Senha: ".$ROW["id"]."<p>Código de acesso: ".$ROW["codAcess"]."<p>Status: ".status($ROW ["status"]);
-                    }
+                        if ($c == 0){
+                            echo "EM ESPERA";
+                        }
                 ?>
+                </div>
+    </div>
     </body>
 </html>

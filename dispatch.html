@@ -2,27 +2,37 @@
     <head>
         <meta charset="utf-8">
         <title>Dispatch</title>
+        <link rel="stylesheet" type ="text/css" href="style.css">
     </head>
     <body>
+        <div class=top-header>
+        <p><i>FILA DE DESPACHO - 3º B SUP</i></p>
+    </div>
+    <h1>CRIAR TICKET</h1>
+    <div class=align-form>
+        
         <form method="POST" action="dispatch.php">
+            
             <label for="codAcess">Código de Acesso: </label><br>
-            <input type="number" id="codAcess" name="codAcess" required="required" size="16" placeholder ="•••• •••• •••• ••••"><br>
+            <input type="number" id="codAcess" name="codAcess" required="required" size="16"><br>
             <label for="description">Descrição: </label><br>
-            <input type="text" id="description" name="description"><br>
-
-            <button type="submit" value="submit">Enviar</button>
+            <input type="text" id="description" name="description"><br><BR>
+            <button type="submit" value="submit" class="btn">Enviar</button>
         </form>
-
+        <br>
+    </div>
+        <h1>ACESSO RESTRITO</h1>
+    <div class="align-form">
         <form method="POST" action="ope.php">
             <label for="login">Usuário: </label><br>
             <input type="text" name="login" id="login" required="required"><br>
             <label for="codAcess" name="codAcess" id="codAcess">Código de Acesso: </label><br>
-            <input type="text" name="codAcess" id="codAcess"><br>
-            <input type="submit" value="sbm" class="btn">
+            <input type="text" name="codAcess" id="codAcess"><br><BR>
+            <input type="submit" value="Enviar" class="btn">
 
 
         </form>
-
+    </div>
 
     </body>
 </html>
