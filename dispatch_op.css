@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto: 400, 500, 700, 300, 100);
+
+body {
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+}
+
+.top-head {
+    background-color: black;
+    display: block;
+    margin-top: 0px;
+    padding: 30px 5px 30px 5px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 2px 2px #DAA520;
+}
+
+.top-head nav {
+    display: inline;
+    font-size: 20px;
+    margin-left: 75px;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.top-head ul {
+    display: inline;
+    font-style: italic;
+}
+
+.top-head li{
+    display: inline;
+    padding: 5px;
+    float: right;
+}
+
+
+
+.top-head img {
+    width: 70px;
+    height: 50px;
+    display: inline;
+    position: absolute;
+    float: left;
+    top: 0;
+    margin-top: 15px ;
+}
+
+.header-nav {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav ul {
+    float: left;
+    padding: 0 0 0 10px;
+    margin: 0;
+    
+}
+
+.header-nav li {
+    border-right: 2px solid #343a45;
+    padding: 0 5px 0 5px;
+}
+
+.header-nav a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.table-fill {
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    height: auto;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+  }
+   
+  th {
+    color:#D5DDE5;;
+    background:#1b1e24;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:18px;
+    font-weight: 100;
+    padding:20px;
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+  }
+  
+  th:first-child {
+    border-top-left-radius:3px;
+  }
+   
+  th:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+  }
+    
+  tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+    color:#666B85;
+    font-size:16px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+  }
+   
+  tr:hover td {
+    background:#4E5066;
+    color:#FFFFFF;
+    border-top: 1px solid #22262e;
+  }
+   
+  tr:first-child {
+    border-top:none;
+  }
+  
+  tr:last-child {
+    border-bottom:none;
+  }
+   
+  tr:nth-child(odd) td {
+    background:#EBEBEB;
+  }
+   
+  tr:nth-child(odd):hover td {
+    background:#4E5066;
+  }
+  
+  tr:last-child td:first-child {
+    border-bottom-left-radius:3px;
+  }
+   
+  tr:last-child td:last-child {
+    border-bottom-right-radius:3px;
+  }
+   
+  td {
+    background:#FFFFFF;
+    padding:15px;
+    text-align:left;
+    vertical-align:middle;
+    font-weight:300;
+    font-size:15px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+  }
+  
+  td:last-child {
+    border-right: 0px;
+  }
+  
+  th.text-left {
+    text-align: left;
+  }
+  
+  th.text-center {
+    text-align: center;
+  }
+  
+  th.text-right {
+    text-align: right;
+  }
+  
+  td.text-left {
+    text-align: left;
+  }
+  
+  td.text-center {
+    text-align: center;
+  }
+  
+  td.text-right {
+    text-align: right;
+  }
+  
+  .table-position {
+      position: absolute;
+      top: 40%;
+      text-align: 100%;
+      width: 100%;
+  }
+
+  .table-hover a {
+      text-decoration: none;
+      color: #4E5066;
+  }
+
+  .table-hover:hover a {
+      color: white;
+  }
+
+  .table-hover .text-left-btn-off{
+      background-color: #5c5b5b;
+      color: white;
+  }
+
+  .table-hover:hover .text-left-btn-off {
+    background-color: #5c5b5b;
+      color: white;
+  }
+
+  .page-location {
+      display: inline;
+      position: absolute;
+      top: 30%;
+      width: 100%;
+      text-align: center;
+      
+  }
+
+  .myButton {
+	box-shadow: 3px 4px 0px 0px #5c5b5b;
+	background:linear-gradient(to bottom, #22262e 5%, #666B85 100%);
+	background-color:#343a45;
+	border-radius:5px;
+	border:1px solid #22262e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

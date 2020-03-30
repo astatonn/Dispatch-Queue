@@ -51,10 +51,36 @@ body {
     margin-top: 15px ;
 }
 
+.header-nav {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav ul {
+    float: left;
+    padding: 0 0 0 10px;
+    margin: 0;
+    
+}
+
+.header-nav li {
+    border-right: 2px solid #343a45;
+    padding: 0 5px 0 5px;
+}
+
+.header-nav a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
 .container-queue {
     display: block;
-    position: absolute;
-    top: 40%;
+    position: fixed;
+    top: 30%;
+    width: 100%;
 
 }
 
@@ -65,21 +91,53 @@ body {
 
 .container-queue a {
     display: inline;
+    border-radius: 3px solid #222222;
+    color: #fff;
+    text-decoration: none;
+    padding: 25px;
+    
 }
 
 .container-queue {
     display: inline;
 }
 
+.table-position {
+    float: left;
+    padding-left: 10%;
+}
+
+.status-position {
+    float: right;
+    padding-right: 10%;
+    text-align: center;
+}
 
 .container-a-link {
     display: inline;
-    background-color:#DAA520 ;
+    padding: 25px;
+    text-align: center;
+    background-color: #22262e;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+.container-a-link:hover {
+    background-color: #9ea7af;
+    color: #222222;
+    font-weight: 100;   
+}
+
+.container-sq {
+    background-color: #22262e;
+    margin-top: 20%;
+    text-align: center;
+    padding: 20px;
+}
 .container-status-queue {
     display: inline;
-    background-color: blue;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    
 }
 
 .table-fill {
@@ -96,7 +154,7 @@ body {
 
 th {
     color: #D5DDE5;
-    background: #1b1e24;
+    background: #2c2a2a;
     border-bottom: 4px solid #9ea7af;
     border-right: 1px solid #343a45;
     font-size: 23px;
@@ -141,19 +199,19 @@ tr:last-child {
 }
 
 tr:nth-child(odd) td{
-    background: #ebebeb;
+    background: rgb(50, 51, 53);
 }
 
-tr:nth-child(odd): hover td{
+tr:nth-child(odd):hover td{
     background: #4e5066;
 }
 
-tr: :last-child td:first-child {
+tr:last-child td:first-child {
     border-bottom-left-radius: 3px;
 }
 
 
-tr: :last-child td:last-child {
+tr:last-child td:last-child {
     border-bottom-right-radius: 3px;
 }
 
@@ -168,7 +226,7 @@ td {
     border-right: 1px solid #c1c3d1;
 }
 
-td: last-child {
+td:last-child {
     border-right: 0px;
 }
 
@@ -194,4 +252,59 @@ td.text-center {
 
 td.text-right {
     text-align: right;
+}
+
+.form-location {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+}
+
+.form-fill {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: auto;
+}
+
+.form-location input {
+    padding: 10px;
+}
+
+.form-location form {
+    padding: 15px;
+
+}
+
+.myButton {
+	box-shadow: 3px 4px 0px 0px #5c5b5b;
+	background:linear-gradient(to bottom, #22262e 5%, #666B85 100%);
+	background-color:#343a45;
+	border-radius:5px;
+	border:1px solid #22262e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.links-postion {
+    position: relative;
+    top: 40%;
+    color: white;
+    width: 100%;
+    height: 100%;
 }

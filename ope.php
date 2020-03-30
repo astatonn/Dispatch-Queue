@@ -14,7 +14,7 @@
         echo "<script>
             setTimeout(function() {
                 window.location = 'dispatch_op.php';
-            }, 2000);
+            }, 0000);
         </script>";
 
     }

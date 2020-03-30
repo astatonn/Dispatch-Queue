@@ -43,7 +43,7 @@
                                 <script>
                                     setTimeout(function() {
                                         window.location = 'dispatch_queue.php';
-                                    }, 3000);
+                                    }, 0000);
                                 </script>
                             ";
                             CloseCon ($connection);
@@ -83,7 +83,7 @@
                 <script>
                     setTimeout(function() {
                         window.location = 'dispatch.html';
-                    }, 3000);
+                    }, 0000);
                 </script>
             ";
         }
