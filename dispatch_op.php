@@ -61,14 +61,18 @@
                 include "functions.php";
                 include "connectDB.php";
                 $connection = OpenCon ();
-                $sql = "SELECT `dispatch_queue`.`id`,`dispatch_queue`.`codAcess`, `dispatch_queue`.`description`, `dispatch_data`.`PG`, `dispatch_data`.`NOME`, `dispatch_data`.`FUNCAO`, `dispatch_queue`.`status`
+                // $sql = "SELECT `dispatch_queue`.`id`,`dispatch_queue`.`codAcess`, `dispatch_queue`.`description`, `dispatch_data`.`PG`, `dispatch_data`.`NOME`, `dispatch_data`.`FUNCAO`, `dispatch_queue`.`status`
+                // FROM dispatch_queue 
+                // INNER JOIN dispatch_data
+                // WHERE `dispatch_data`.`codAcess` = `dispatch_queue`.`codAcess`
+                // ORDER BY id ASC";
+                $sql = "SELECT *
                 FROM dispatch_queue 
                 INNER JOIN dispatch_data
                 WHERE `dispatch_data`.`codAcess` = `dispatch_queue`.`codAcess`
                 ORDER BY id ASC";
                 $return = $connection ->query($sql);
                 
-                if($return ->num_rows > 0){
                     while ($row = $return ->fetch_assoc()){
                         switch ($row["status"]){
                             case 0:
@@ -98,10 +102,8 @@
 
                             }
                         }
-                }
-                else {
-                    echo "SEM FILA!";
-                }
+                
+                
             ?>
         </tbody>
     </table>
